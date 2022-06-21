@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--  clicked color  -->
+    <color name="click_yellow">#F8F567</color>
+    <color name="non_click_base">#656555</color>
+    <color name="main_color">#48BB7A</color>
 </resources>
