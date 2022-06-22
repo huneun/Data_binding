@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.ivIconFlower.setOnClickListener {
             activityMainBinding.vMygardenPoint.setBackgroundResource(R.color.click_yellow)
             activityMainBinding.vPlantsPoint.setBackgroundResource(R.color.non_click_base)
-            setFragment(0)
+            setFragment(1)
         }
 
         activityMainBinding.ivIconPlant.setOnClickListener {
             activityMainBinding.vMygardenPoint.setBackgroundResource(R.color.non_click_base)
             activityMainBinding.vPlantsPoint.setBackgroundResource(R.color.click_yellow)
-            setFragment(1)
+            setFragment(0)
         }
 
         activityMainBinding.ivIconFlower.callOnClick()

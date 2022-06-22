@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.flower.ItemActivity
-import com.example.flower.MainActivity
 import com.example.flower.controller.ImageLoader
 import com.example.flower.databinding.FragmentMygardenBinding
 import com.example.flower.model.ViewData
@@ -44,7 +43,7 @@ class FragmentMyGarden() : Fragment() {
             for(i in 0 until jArray.length()) {
                 val obj = jArray.getJSONObject(i)
                 val url = obj.getString("url")
-                val title = obj.getString("name")
+                val title = obj.getString("text")
                 val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
                 Log.d("test-jennet", "bitmap Image : "+bitmapImage)
                 var viewData = bitmapImage?.let { ViewData(it, title) }!!
