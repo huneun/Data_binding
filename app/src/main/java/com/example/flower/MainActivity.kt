@@ -1,76 +1,59 @@
 package com.example.flower
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 import com.example.flower.databinding.ActivityMainBinding
-import com.example.flower.databinding.FragmentMygardenBinding
-import com.example.flower.databinding.FragmentPlantlistBinding
-import com.example.flower.view.FragmentMyGarden
-import com.example.flower.view.FragmentPlants
+import com.example.flower.view.ViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var activityMainBinding: ActivityMainBinding
+    lateinit var activityMainBinding: ActivityMainBinding
+    private lateinit var viewpager : ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
+
         //메인엑티비티 바인딩
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
+        viewpager = activityMainBinding.vpLayout
+        val tablayout = activityMainBinding.tablayoutMain
 
-        activityMainBinding.ivIconFlower.setOnClickListener {
-            activityMainBinding.vMygardenPoint.setBackgroundResource(R.color.click_yellow)
-            activityMainBinding.vPlantsPoint.setBackgroundResource(R.color.non_click_base)
-            setFragment(1)
-        }
-
-        activityMainBinding.ivIconPlant.setOnClickListener {
-            activityMainBinding.vMygardenPoint.setBackgroundResource(R.color.non_click_base)
-            activityMainBinding.vPlantsPoint.setBackgroundResource(R.color.click_yellow)
-            setFragment(0)
-        }
-
-        activityMainBinding.ivIconFlower.callOnClick()
-    }
-
-    private fun setFragment(fragNum : Int){
-        val fragTrant = supportFragmentManager.beginTransaction()
-        when(fragNum){
-            0 -> {
-                fragTrant.replace(activityMainBinding.layoutFragmentArea.id, FragmentPlants()).commit()
+        tablayout.addOnTabSelectedListener(object  : TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(p0: TabLayout.Tab?) {
+                Log.d("test-jennet", "onTabSelected tab : "+(p0?.position ?: -1))
+                when(p0?.position ?: -1){
+                    0-> viewpager.setCurrentItem(0, true)
+                    1-> viewpager.setCurrentItem(1, true)
+                    else -> -1
+                }
             }
-            1 -> {
-                fragTrant.replace(activityMainBinding.layoutFragmentArea.id, FragmentMyGarden()).commit()
-            }
-        }
-    }
 
-//    class RecyclerAsyncTask(val str : String, val arrayData : ArrayList<ViewData>) {
-//
-//        fun execute(binding : ViewBinding, context: Context) {
-//            CoroutineScope(Dispatchers.Main).launch {
-//                val jObject = JSONObject(str)
-//                val jArray = jObject.getJSONArray("result")
-//
-//                for(i in 0 until jArray.length()) {
-//                    val obj = jArray.getJSONObject(i)
-//                    val url = obj.getString("url")
-//                    val title = obj.getString("name")
-//                    val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
-//                    Log.d("test-jennet", "bitmap Image : "+bitmapImage)
-//                    var viewData = bitmapImage?.let { ViewData(it, title) }!!
-//                    viewData?.let { arrayData.add(it) }
-//                }
-//                Log.d("test-jennet", "ArrayData : "+ arrayData)
-//                mActivityMainBinding.rvMain.layoutManager = GridLayoutManager(context, 2)
-//                mActivityMainBinding.rvMain.adapter = CustomAdapter(arrayData)
-//
-//            }
-//
-//        }
-//    }
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+                Log.d("test-jennet", "onTabUnselected tab : "+ p0)
+            }
+
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+                Log.d("test-jennet", "onTabReselected tab : "+ p0)
+            }
+
+        })
+
+
+        viewpager.adapter = ViewPagerAdapter(2, this)
+        viewpager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                tablayout.selectTab(tablayout.getTabAt(position))
+                super.onPageSelected(position)
+            }
+        })
+
+
+    }
 
 }
+
+
 

@@ -3,17 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_filter_list_18.xml" value="0.1953125" />
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_filter_list_24.xml" value="0.1953125" />
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_local_florist_24.xml" value="0.1953125" />
+        <entry key="..\:/flower/app/src/main/res/drawable/custom_indicator.xml" value="0.19895833333333332" />
         <entry key="..\:/flower/app/src/main/res/drawable/flower_selector.xml" value="0.2015625" />
         <entry key="..\:/flower/app/src/main/res/drawable/leaves_selector.xml" value="0.20833333333333334" />
         <entry key="..\:/flower/app/src/main/res/drawable/plants_selector.xml" value="0.19739583333333333" />
         <entry key="..\:/flower/app/src/main/res/layout/activity_item.xml" value="0.1828125" />
-        <entry key="..\:/flower/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/flower/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/flower/app/src/main/res/layout/content_layout.xml" value="0.25" />
+        <entry key="..\:/flower/app/src/main/res/layout/content_scrolling.xml" value="0.17916666666666667" />
         <entry key="..\:/flower/app/src/main/res/layout/fragment_mygarden.xml" value="0.2712962962962963" />
         <entry key="..\:/flower/app/src/main/res/layout/fragment_plantlist.xml" value="0.25" />
+        <entry key="..\:/flower/app/src/main/res/layout/main_menu.xml" value="0.17916666666666667" />
         <entry key="..\:/flower/app/src/main/res/layout/recyclerview_main.xml" value="0.28055555555555556" />
         <entry key="..\:/flower/app/src/main/res/layout/recyclerview_main_item.xml" value="0.2777777777777778" />
         <entry key="..\:/flower/app/src/main/res/layout/recyclerview_second_item.xml" value="0.28055555555555556" />
+        <entry key="..\:/flower/app/src/main/res/menu/main_munu.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>
