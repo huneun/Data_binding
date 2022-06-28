@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/flower/app/src/main/res/drawable/all_round.xml" value="0.31851851851851853" />
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_arrow_back_18.xml" value="0.31851851851851853" />
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_arrow_back_24.xml" value="0.31851851851851853" />
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_arrow_back_36.xml" value="0.31851851851851853" />
         <entry key="..\:/flower/app/src/main/res/drawable/baseline_filter_list_18.xml" value="0.1953125" />
         <entry key="..\:/flower/app/src/main/res/drawable/baseline_filter_list_24.xml" value="0.1953125" />
         <entry key="..\:/flower/app/src/main/res/drawable/baseline_local_florist_24.xml" value="0.1953125" />
+        <entry key="..\:/flower/app/src/main/res/drawable/baseline_share_24.xml" value="0.31851851851851853" />
+        <entry key="..\:/flower/app/src/main/res/drawable/bottom_left_round.xml" value="0.2598958333333333" />
         <entry key="..\:/flower/app/src/main/res/drawable/custom_indicator.xml" value="0.19895833333333332" />
         <entry key="..\:/flower/app/src/main/res/drawable/flower_selector.xml" value="0.2015625" />
+        <entry key="..\:/flower/app/src/main/res/drawable/half_edge.xml" value="0.2598958333333333" />
         <entry key="..\:/flower/app/src/main/res/drawable/leaves_selector.xml" value="0.20833333333333334" />
         <entry key="..\:/flower/app/src/main/res/drawable/plants_selector.xml" value="0.19739583333333333" />
+        <entry key="..\:/flower/app/src/main/res/drawable/top_right_round.xml" value="0.2598958333333333" />
         <entry key="..\:/flower/app/src/main/res/layout/activity_item.xml" value="0.1828125" />
         <entry key="..\:/flower/app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="..\:/flower/app/src/main/res/layout/content_layout.xml" value="0.25" />
+        <entry key="..\:/flower/app/src/main/res/layout/content_layout.xml" value="0.1" />
         <entry key="..\:/flower/app/src/main/res/layout/content_scrolling.xml" value="0.17916666666666667" />
         <entry key="..\:/flower/app/src/main/res/layout/fragment_mygarden.xml" value="0.2712962962962963" />
         <entry key="..\:/flower/app/src/main/res/layout/fragment_plantlist.xml" value="0.25" />
