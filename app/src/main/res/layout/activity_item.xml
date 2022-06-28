@@ -1,10 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/last_pang"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
     tools:context=".ItemActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_script"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:background="@color/white">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/sunflower_a"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:layout_collapseMode = "parallax"
+                android:fitsSystemWindows="true"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tv_content_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="5dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:layout_collapseMode = "pin"
+                android:fitsSystemWindows="true"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="28sp"
+                    android:textColor="@color/non_click_base"
+                    android:text="Title"/>
+            </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:id="@+id/tv_water_need"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_variety"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="watering needs"
+                android:textSize="16sp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/tv_left_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_water_need"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textColor="@color/non_click_base"
+                android:gravity="center"
+                android:text="every %d days"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_left_days"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/non_click_base"
+                android:padding="15dp"
+                android:scrollbars="vertical"
+                android:text="The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail.The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. \n\n\n The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail. \n\n\n The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. \n\n\n The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail.The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail. \n finish " />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="8dp"
+            android:background="@drawable/all_round"
+            android:backgroundTint="@color/white"
+            android:padding="10dp"
+            android:src="@drawable/arrows"/>
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/all_round"
+            android:backgroundTint="@color/white"
+            android:padding="8dp"
+            android:src="@drawable/baseline_share_black_36"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
