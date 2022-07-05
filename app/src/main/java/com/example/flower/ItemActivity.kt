@@ -44,8 +44,10 @@ class ItemActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             display.getSize(size)
             @Suppress("DEPRECATION")
-            activityItemBinding.contentScript.minHeight = display.height
+            activityItemBinding.contentScript.minimumHeight = display.height
         }
+
+
 
 
 
