@@ -2,4 +2,9 @@
 <resources>
 
 <!--    <style name="AppBarOverlay"></style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryDark">@color/non_click_base</item>
+        <item name="colorAccent">@color/main_color_point</item>
+    </style>
 </resources>

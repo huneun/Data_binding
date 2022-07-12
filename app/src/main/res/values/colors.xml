@@ -6,14 +6,16 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFFFF</color> <!--textColorPrimary-->
 
     <color name="click_yellow">#F8F567</color>
     <color name="click_yellow_point">#e7e456</color>
     <color name="click_yellow_variety">#672426</color>
 
-    <color name="non_click_base">#656555</color>
-    <color name="main_color">#48BB7A</color>
+    <color name="non_click_base">#656555</color> <!--colorPrimaryDark-->
+    <color name="main_color">#48BB7A</color> <!--colorPrimary-->
     <color name="main_color_point">#6ADD9C</color>
     <color name="main_variety">#7A8D9C</color>
+
+
 </resources>
