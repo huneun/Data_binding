@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/main_color</item>
         <item name="colorPrimaryVariant">@color/main_variety</item>
         <item name="colorOnPrimary">@color/main_color_point</item>
+        <item name="colorPrimaryDark">@color/main_variety</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/click_yellow_point</item>
         <item name="colorSecondaryVariant">@color/click_yellow_variety</item>

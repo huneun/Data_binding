@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/item_sort"
         android:orderInCategory="100"
-        android:icon="@drawable/baseline_filter_list_24"
+        android:icon="@drawable/baseline_filter_list_white_24"
         app:showAsAction="always"
+        android:visible="false"
+        tools:visible="true"
         android:title="sort"/>
 </menu>

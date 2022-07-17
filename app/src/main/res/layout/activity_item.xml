@@ -3,119 +3,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_scrollFlags="scroll|exitUntilCollapsed"
     android:fitsSystemWindows="true"
     android:background="@color/white"
     tools:context=".ItemActivity">
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="234dp"
-            android:background="@drawable/sunflower_a"
-            android:fitsSystemWindows="true"
-            app:layout_scrollFlags="scroll">
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:text="두려움은,\n\n\n\n\n\n\n\n\n단순히 곧 일어날 어떤일에\n대비가 필요하다는 예감이다\n\n\n\n\n\n\n\n마음의 상처를 받았다는 느낌이\n우리에게 주는 의미는\n우리의 기대가 충족되지 못했다는 것이다
+            \n\n\n\n\n\n\n\n넘치도록 사랑을 줄 수 있다면\n세상에서 가장 능력있는 사람이 될 수 있다\n\n\n\n\n\n\n\n두려운 방향에 초점을 맞추지 말고,\n가고싶은 방향에 초점을 맞추어라\n\n\n\n\n\n\n\n- 네 안에 잠든 거인을 깨워라\n\n\n\n\n\n\n\n제가 두려운 것은 상대의 전략이 아니라 우리 자신의 실수입니다\n\n\n\n\n\n\n\n페레클레스 명언"/>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/content_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetStart="0dp">
 
-
-            <Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin">
-
-                <ImageView
-                    android:id="@+id/iv_back"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_gravity="start"
-                    android:background="@drawable/all_round"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/baseline_arrow_back_black_36" />
-
-                <ImageView
-                    android:id="@+id/iv_share"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/all_round"
-                    android:backgroundTint="@color/white"
-                    android:padding="3dp"
-                    android:src="@drawable/baseline_share_black_36" />
-            </Toolbar>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar_sub_bar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/white"
-            app:layout_scrollFlags="scroll"
-            tools:visibility="visible">
-
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/baseline_arrow_back_black_36"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-
-                android:layout_gravity="center"
-                android:text="title"
-                android:textColor="@color/non_click_base"
-                android:textSize="36dp"/>
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/baseline_share_black_36"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_gravity="end"
-                android:padding="5dp"
-                android:layout_marginRight="15dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/content_script"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_height="match_parent"
             android:background="@color/white">
 
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail.The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. \n\n\n The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail. \n\n\n The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. \n\n\n The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail.The sunflower (English: Helianthus or sunflower) is an annual plant belonging to the Asteraceae family, and its flower is a capsicum. It is called Gyugwak, Gyuhwa, and Hyangilhwa in Chinese characters, and other perennials belonging to the genus Sunflower are also commonly called sunflowers. It is native to Central America and was introduced to Europe in the 16th century. There are more than 60 species of plants in the genus Sunflower to which sunflower belongs. The flower has the property of pointing in the direction of the sun (phototropism). Although it means 'flowers always face the sun', sunflowers only move from east to west following the sunlight when they are young. It is known only that vegetative reproduction is possible, but it is not known in detail. \n finish "
-                android:textColor="@color/non_click_base"/>
+                android:id="@+id/tv_content_title"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:text="TEST TITLE"
+                android:textSize="25sp"
+                android:textAppearance="?attr/actionBarSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/iv_home"
+                app:layout_constraintRight_toLeftOf="@id/iv_share"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="234dp"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+            app:toolbarId="@id/content_bar">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sunflower_a"
+                app:layout_collapseMode="parallax"/>
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_collapseParallaxMultiplier="0.3">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_topNavigator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/iv_home2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/home"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/iv_share2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/share"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageView
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/fab_margin"
-        app:layout_anchor="@id/toolbar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_anchor="@id/collapsing_toolbar"
         app:layout_anchorGravity="bottom|end"
-        android:src="@drawable/lemon_button"
-        app:fabCustomSize="60dp"
-        app:maxImageSize="75dp"
-        android:backgroundTint="@android:color/transparent"
-        android:background="@android:color/transparent"
-        app:borderWidth="0dp"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:background="@drawable/lemon_button" />
 
 
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/white">-->
+
+<!--    </com.google.android.material.tabs.TabLayout>-->
+<!--    <include-->
+<!--        android:id="@+id/title_bar"-->
+<!--        layout="@layout/action_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"/>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
