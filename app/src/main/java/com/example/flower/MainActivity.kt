@@ -13,7 +13,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
-    private lateinit var viewpager : ViewPager2
     lateinit private var menuSort : MenuItem
 
     private val tabTitleArray = arrayOf(
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
-        setSupportActionBar(activityMainBinding.titleBar.titleToolbar)
+        setSupportActionBar(activityMainBinding.titleBar.baseToolbar)
 
         val viewPager = activityMainBinding.vpMain
         val tabLayout = activityMainBinding.tabBar.tablayoutMain
@@ -57,9 +56,9 @@ class MainActivity : AppCompatActivity() {
                 Log.d("test-jennet", "onTabSelected position : $tabPosition")
                 tab?.icon = getDrawable(tabIconClickedArray[tabPosition!!])
                 when(tabPosition) {
-                    0 -> menuSort.setVisible(true)
-                    1 -> menuSort.setVisible(false)
-                    else -> menuSort.setVisible(true)
+                    0 -> menuSort.setVisible(false)
+                    1 -> menuSort.setVisible(true)
+                    else -> menuSort.setVisible(false)
                 }
             }
 
@@ -67,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                 var tabPosition = tab?.position
                 Log.d("test-jennet", "onTabUnselected position : $tabPosition")
                 tab?.icon = getDrawable(tabIconNonClickArray[tabPosition!!])
-
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
@@ -80,8 +78,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        Log.d("test-jennet", "Menu : ${menu.hashCode()}")
         menuInflater.inflate(R.menu.main_menu, menu)
         menuSort = menu!!.findItem(R.id.item_sort)
+        Log.d("test-jennet", "onCreateOptionsMenu MainActivity ")
+
         return true
     }
 

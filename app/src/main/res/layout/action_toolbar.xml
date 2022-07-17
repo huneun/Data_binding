@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/title_toolbar"
+        android:id="@+id/base_toolbar"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -13,4 +13,6 @@
         app:title="SunFlower"
         app:titleCentered="true"
         app:titleTextColor="@color/white"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
