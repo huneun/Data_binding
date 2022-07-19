@@ -1,21 +1,10 @@
 package com.example.flower
 
-import android.app.ActionBar
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.graphics.drawable.toBitmap
 import com.example.flower.databinding.ActivityItemBinding
+
 
 class ItemActivity : AppCompatActivity() {
     lateinit var activityItemBinding: ActivityItemBinding
@@ -25,19 +14,15 @@ class ItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityItemBinding = ActivityItemBinding.inflate(layoutInflater)
         setContentView(activityItemBinding.root)
-        var toolbar = activityItemBinding.titleBar.baseToolbar
-        toolbar.setBackgroundColor(Color.TRANSPARENT)
-        toolbar.setTitleTextColor(Color.DKGRAY)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        var btn_home = ImageView(this)
-        btn_home.setBackgroundResource(R.drawable.all_round)
-        btn_home.setBackgroundColor(Color.WHITE)
+//        var toolbar = activityItemBinding.titleBar.baseToolbar
+//        toolbar.setBackgroundColor(Color.TRANSPARENT)
+//        toolbar.setTitleTextColor(Color.DKGRAY)
+//        setSupportActionBar(toolbar)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-//        btn_home.background.setTint(Color.WHITE)
-        btn_home.setImageResource((R.drawable.baseline_arrow_back_black_24))
-        supportActionBar?.setHomeAsUpIndicator(btn_home.drawable)
+
+//        supportActionBar?.setHomeAsUpIndicator(homeImg.drawable)
 
 //        Log.d("test-jennet", "Menu : ${menu.hashCode()}")
 //        menuInflater.inflate(R.menu.main_menu, menu)
@@ -100,14 +85,15 @@ class ItemActivity : AppCompatActivity() {
 //
 //    }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.action_menu, menu)
-//        menuBack = menu!!.findItem(R.id.item_top_navigater_back)
-        Log.d("test-jennet", "onCreateOptionsMenu ItemActivity")
-        menuShare = menu!!.findItem(R.id.item_top_navigater_share)
-
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.action_menu, menu)
+//
+////        menuBack = menu!!.findItem(R.id.item_top_navigater_back)
+//        Log.d("test-jennet", "onCreateOptionsMenu ItemActivity")
+//        menuShare = menu!!.findItem(R.id.item_top_navigater_share)
+//
+//        return true
+//    }
 
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
