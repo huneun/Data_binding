@@ -1,11 +1,14 @@
 package com.example.flower.view
 
+import android.graphics.drawable.GradientDrawable
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flower.R
 import com.example.flower.databinding.RecyclerviewMainItemBinding
 import com.example.flower.model.ViewData
 
@@ -33,6 +36,9 @@ class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
         fun bind(data: ViewData) {
             binding.ivRecyclerview.setImageBitmap(data.itemImage)
             binding.tvRecycerview.text = data.itemText
+            binding.ivRecyclerview.background = binding.root.resources.getDrawable(R.drawable.top_right_round, null)
+            binding.ivRecyclerview.clipToOutline = true
+
         }
 
     }

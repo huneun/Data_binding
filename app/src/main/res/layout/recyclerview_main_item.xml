@@ -21,6 +21,7 @@
                 android:id="@+id/iv_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:scaleType="fitXY"
                 android:layout_weight="1" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,6 +33,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/white"
+                    android:background="@drawable/bottom_left_round"
                     android:text="Sunflower \n\nPlanted\nAug 31, 2019\n\nLast Watered\nAug 31, 2019\nwater in 3 days."/>
             </LinearLayout>
         </LinearLayout>

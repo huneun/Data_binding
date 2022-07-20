@@ -1,76 +1,102 @@
 package com.example.flower
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 import com.example.flower.databinding.ActivityMainBinding
-import com.example.flower.databinding.FragmentMygardenBinding
-import com.example.flower.databinding.FragmentPlantlistBinding
-import com.example.flower.view.FragmentMyGarden
-import com.example.flower.view.FragmentPlants
+import com.example.flower.view.ViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var activityMainBinding: ActivityMainBinding
+    lateinit var activityMainBinding: ActivityMainBinding
+    lateinit private var menuSort : MenuItem
+
+    private val tabTitleArray = arrayOf(
+        "MY GARDEN",
+        "PALNT LIST"
+    )
+
+    private val tabIconNonClickArray = arrayOf(
+        R.drawable.flower,
+        R.drawable.leaves
+    )
+
+    private val tabIconClickedArray = arrayOf(
+        R.drawable.flower_click,
+        R.drawable.leaves_click
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
+
         //메인엑티비티 바인딩
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
-        activityMainBinding.ivIconFlower.setOnClickListener {
-            activityMainBinding.vMygardenPoint.setBackgroundResource(R.color.click_yellow)
-            activityMainBinding.vPlantsPoint.setBackgroundResource(R.color.non_click_base)
-            setFragment(1)
-        }
+        setSupportActionBar(activityMainBinding.titleBar.baseToolbar)
 
-        activityMainBinding.ivIconPlant.setOnClickListener {
-            activityMainBinding.vMygardenPoint.setBackgroundResource(R.color.non_click_base)
-            activityMainBinding.vPlantsPoint.setBackgroundResource(R.color.click_yellow)
-            setFragment(0)
-        }
+        val viewPager = activityMainBinding.vpMain
+        val tabLayout = activityMainBinding.tabBar.tablayoutMain
 
-        activityMainBinding.ivIconFlower.callOnClick()
+        viewPager.adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = tabTitleArray[position]
+            tab.icon = getDrawable(tabIconNonClickArray[position])
+        }.attach()
+
+        tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                var tabPosition = tab?.position
+                Log.d("test-jennet", "onTabSelected position : $tabPosition")
+                tab?.icon = getDrawable(tabIconClickedArray[tabPosition!!])
+                when(tabPosition) {
+                    0 -> menuSort.setVisible(false)
+                    1 -> menuSort.setVisible(true)
+                    else -> menuSort.setVisible(false)
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                var tabPosition = tab?.position
+                Log.d("test-jennet", "onTabUnselected position : $tabPosition")
+                tab?.icon = getDrawable(tabIconNonClickArray[tabPosition!!])
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+            }
+
+        })
+
+
     }
 
-    private fun setFragment(fragNum : Int){
-        val fragTrant = supportFragmentManager.beginTransaction()
-        when(fragNum){
-            0 -> {
-                fragTrant.replace(activityMainBinding.layoutFragmentArea.id, FragmentPlants()).commit()
-            }
-            1 -> {
-                fragTrant.replace(activityMainBinding.layoutFragmentArea.id, FragmentMyGarden()).commit()
-            }
-        }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        Log.d("test-jennet", "Menu : ${menu.hashCode()}")
+        menuInflater.inflate(R.menu.main_menu, menu)
+        menuSort = menu!!.findItem(R.id.item_sort)
+        Log.d("test-jennet", "onCreateOptionsMenu MainActivity ")
+
+        return true
     }
 
-//    class RecyclerAsyncTask(val str : String, val arrayData : ArrayList<ViewData>) {
-//
-//        fun execute(binding : ViewBinding, context: Context) {
-//            CoroutineScope(Dispatchers.Main).launch {
-//                val jObject = JSONObject(str)
-//                val jArray = jObject.getJSONArray("result")
-//
-//                for(i in 0 until jArray.length()) {
-//                    val obj = jArray.getJSONObject(i)
-//                    val url = obj.getString("url")
-//                    val title = obj.getString("name")
-//                    val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
-//                    Log.d("test-jennet", "bitmap Image : "+bitmapImage)
-//                    var viewData = bitmapImage?.let { ViewData(it, title) }!!
-//                    viewData?.let { arrayData.add(it) }
-//                }
-//                Log.d("test-jennet", "ArrayData : "+ arrayData)
-//                mActivityMainBinding.rvMain.layoutManager = GridLayoutManager(context, 2)
-//                mActivityMainBinding.rvMain.adapter = CustomAdapter(arrayData)
-//
-//            }
-//
-//        }
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.item_sort -> {
+                Log.d("test-jennet", "onOptionsItemSelected app_bar: $item ")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 }
+
+
 
