@@ -18,14 +18,14 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/corners_diagonal_round"
-            tools:backgroundTint="@color/white"
+            android:backgroundTint="@color/white"
             android:layout_marginBottom="20dp">
             <ImageView
                 android:id="@+id/iv_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 tools:src="@drawable/sunflower_a"
-                tools:background="@drawable/corners_diagonal_round"
+                tools:backgroundTintMode="multiply"
                 android:scaleType="fitXY"
                 android:layout_weight="1" />
             <LinearLayout
@@ -33,7 +33,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:backgroundTint="@color/white"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/tv_main_item_title"
