@@ -52,20 +52,27 @@ class MainActivity : AppCompatActivity() {
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                var tabPosition = tab?.position
-                Log.d("test-jennet", "onTabSelected position : $tabPosition")
-                tab?.icon = getDrawable(tabIconClickedArray[tabPosition!!])
-                when(tabPosition) {
-                    0 -> menuSort.setVisible(false)
-                    1 -> menuSort.setVisible(true)
-                    else -> menuSort.setVisible(false)
+
+                tab?.position.let {
+                    Log.d("test-jennet", "onTabSelected position : $it")
+                    tab?.icon = getDrawable(tabIconClickedArray[it!!])
+                    when(it) {
+                        0 -> menuSort.setVisible(false)
+                        1 -> menuSort.setVisible(true)
+                        else -> menuSort.setVisible(false)
+                    }
                 }
+
+
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                var tabPosition = tab?.position
-                Log.d("test-jennet", "onTabUnselected position : $tabPosition")
-                tab?.icon = getDrawable(tabIconNonClickArray[tabPosition!!])
+
+                tab?.position.let{
+                        Log.d("test-jennet", "onTabUnselected position : $it") // var pos
+                        tab?.icon = getDrawable(tabIconNonClickArray[it!!])
+                }
+
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {

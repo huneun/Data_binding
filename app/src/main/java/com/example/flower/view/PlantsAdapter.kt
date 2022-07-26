@@ -27,8 +27,8 @@ class PlantsAdapter(private val dataSet: ArrayList<ViewData>) :
     class ViewHolder(private val binding: RecyclerviewSecondItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: ViewData) {
             binding.ivRecyclerview.setImageBitmap(data.itemImage)
-            binding.tvRecycerview.text = data.itemText
-            binding.ivRecyclerview.background = binding.root.resources.getDrawable(R.drawable.top_right_round, null)
+            binding.tvRecycerview.text = data.itemName
+            binding.ivRecyclerview.background = binding.root.resources.getDrawable(R.drawable.corners_diagonal_round, null)
             binding.ivRecyclerview.clipToOutline = true
         }
 
