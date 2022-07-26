@@ -42,7 +42,7 @@ class FragmentPlants() : Fragment() {
                 val title = obj.getString("name")
                 val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
                 Log.d("test-jennet", "bitmap Image : "+bitmapImage)
-                var viewData = bitmapImage?.let { ViewData(it, title) }!!
+                var viewData = bitmapImage?.let { ViewData(it, title,"","") }!!
                 viewData?.let { arrayData.add(it) }
             }
             Log.d("test-jennet", "ArrayData : "+ arrayData)
