@@ -1,12 +1,9 @@
 package com.example.flower.view
 
-import android.graphics.drawable.GradientDrawable
-import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flower.R
 import com.example.flower.databinding.RecyclerviewMainItemBinding
@@ -35,9 +32,11 @@ class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
     class ViewHolder(private val binding: RecyclerviewMainItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: ViewData) {
             binding.ivRecyclerview.setImageBitmap(data.itemImage)
-            binding.tvRecycerview.text = data.itemText
-            binding.ivRecyclerview.background = binding.root.resources.getDrawable(R.drawable.top_right_round, null)
+            binding.ivRecyclerview.background = binding.root.resources.getDrawable(R.drawable.corners_diagonal_round, null)
             binding.ivRecyclerview.clipToOutline = true
+            binding.tvMainItemTitle.text = data.itemName
+            binding.tvMainItemPlanted.text = data.itemPlanted
+            binding.tvMainItemWatered.text = data.itemWatered
 
         }
 

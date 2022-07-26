@@ -41,15 +41,20 @@ class FragmentMyGarden() : Fragment() {
             val jArray = jObject.getJSONArray("result")
 
             for(i in 0 until jArray.length()) {
-                val obj = jArray.getJSONObject(i)
-                val url = obj.getString("url")
-                val title = obj.getString("text")
-                val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
-                Log.d("test-jennet", "bitmap Image : "+bitmapImage)
-                var viewData = bitmapImage?.let { ViewData(it, title) }!!
-                viewData?.let { arrayData.add(it) }
+                jArray.getJSONObject(i).let{
+                    val url = it.getString("url")
+                    val title = it.getString("name")
+                    val planted = it.getString("planted")
+                    val watered = it.getString("watered")
+                    val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
+                    Log.d("test-jennet", "bitmap Image : $bitmapImage")
+                    var viewData = bitmapImage?.let { ViewData(it, title, planted, watered) }
+                    viewData?.let { it -> arrayData.add(it) }
+
+                }
+
             }
-            Log.d("test-jennet", "ArrayData : "+ arrayData)
+            Log.d("test-jennet", "ArrayData : $arrayData")
             binding.rvMain.layoutManager = GridLayoutManager(context, 2)
             gardenAdapter = MyGardenAdapter(arrayData)
             binding.rvMain.adapter = gardenAdapter
@@ -58,6 +63,7 @@ class FragmentMyGarden() : Fragment() {
                 override fun onClick(v: View, position: Int) {
                     if(position == 0) {
                         val nextIntent = Intent(activity, ItemActivity::class.java)
+                        nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
                         startActivity(nextIntent)
                     }
                 }
