@@ -1,40 +1,58 @@
-{"result": [
-  {
-    "url": "https://url.kr/5sf6p2",
-    "name": "Sunflower",
-    "exp": "But eating foods full of B vitamins such as tuna, sunflower seeds, and pork can protect them from a steep decline of the memory cells.",
-    "cycle" : "5"
-  },
-{"url": "https://url.kr/zklq7p",
-  "name": "Apple",
-  "exp": "An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek, and European Christian tradition.\n\n Apples grown from seed tend to be very different from those of their parents, and the resultant fruit frequently lacks desired characteristics. Generally, apple cultivars are propagated by clonal grafting onto rootstocks. Apple trees grown without rootstocks tend to be larger and much slower to fruit after planting. Rootstocks are used to control the speed of growth and the size of the resulting tree, allowing for easier harvesting. \n\n (From Wikipedia)",
-  "cycle": "3"},
-{"url": "https://url.kr/4vlcp8",
-  "name": "Avocado",
-  "exp":  "The avocado (Persea americana) is a tree originating in the Americas which is likely native to the highland regions of south-central Mexico to Guatemala.[3][4][5] It is classified as a member of the flowering plant family Lauraceae.[3] The fruit of the plant, also called an avocado (or avocado pear or alligator pear), is botanically a large berry containing a single large seed. \n\n Avocado trees are partially self-pollinating, and are often propagated through grafting to maintain predictable fruit quality and quantity. \n\n (From Wikipedia)",
-  "cycle": "4"},
-{"url": "https://url.kr/jmw4uq",
-  "name": "Beet",
-  "exp": "The beetroot is the taproot portion of a beet plant, usually known in North America as beets while the vegetable is referred to as beetroot in British English, and also known as the table beet, garden beet, red beet, dinner beet or golden beet.\n\nIt is one of several cultivated varieties of Beta vulgaris grown for their edible taproots and leaves (called beet greens); they have been classified as B. vulgaris subsp. vulgaris Conditiva Group.[2]\n\nOther cultivars of the same species include the sugar beet, the leaf vegetable known as chard or spinach beet, and mangelwurzel, which is a fodder crop. Three subspecies are typically recognized. \n\n (From Wikipedia)",
-  "cycle": "7" },
-{"url": "https://url.kr/ftu57h",
-  "name": "Bougainvillea",
-  "exp":  "Bougainvillea is a genus of thorny ornamental vines, bushes, and trees belonging to the four o' clock family, Nyctaginaceae. It is native to eastern South America, found from Brazil, west to Peru, and south to southern Argentina. Different authors accept from 4 to 18 species in the genus.\n\n The inflorescence consists of large colourful sepal-like bracts which surround three simple waxy flowers, gaining popularity for the plant as an ornamental. \n\n (From Wikipedia)",
-  "cycle": "2"},
-{"url": "https://url.kr/ehu342",
-  "name": "Corn",
-  "exp": "Maize, also known as corn (North American and Australian English), is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago.\n\n The leafy stalk of the plant produces pollen inflorescences (or \"tassels\") and separate ovuliferous inflorescences called ears that when fertilized yield kernels or seeds, which are fruits. \n\n (From Wikipedia)",
-  "cycle": "9"},
-{"url": "https://url.kr/duqcgx",
-  "name": "BlueBerry",
-  "exp": "Blueberries are a widely distributed and widespread group of perennial flowering plants with blue or purple berries. \n\n They are classified in the section Cyanococcus within the genus Vaccinium. Vaccinium also includes cranberries, bilberries, huckleberries and Madeira blueberries.\n\n Commercial blueberries—both wild (lowbush) and cultivated (highbush)—are all native to North America. The highbush varieties were introduced into Europe during the 1930s. \n\n (From Wikipedia)" ,
-  "cycle": "2"},
-{"url": "https://url.kr/7spifr",
-  "name": "Melon",
-  "exp" : "A melon is any of various plants of the family Cucurbitaceae with sweet, edible, and fleshy fruit. \n\n The word \"melon\" can refer to either the plant or specifically to the fruit. Botanically, a melon is a kind of berry, specifically a \"pepo\". The word melon derives from Latin melopepo, which is the latinization of the Greek , meaning \"melon\", itself a compound of μῆλον (mēlon), \"apple, treefruit (of any kind)\" and , amongst others \"a kind of gourd or melon\". \n\n Many different cultivars have been produced, particularly of cantaloupes. \n\n (From Wikipedia)",
-  "cycle": "3"},
-{"url": "https://url.kr/sqbjdo",
-  "name": "Daisy",
-  "exp" : "Bellis perennis is a perennial herbaceous plant growing to 20 centimetres (8 inches) in height. \n\n It has short creeping rhizomes and rosettes of small rounded or spoon-shaped leaves that are from 2 to 5 cm (3⁄4–2 in) long and grow flat to the ground. The species habitually colonises lawns, and is difficult to eradicate by mowing, hence the term 'lawn daisy'. \n\n It blooms from March to September and exhibits the phenomenon of heliotropism, in which the flowers follow the position of the sun in the sky. \n\n (From Wikipedia)",
-  "cycle": "1"}
-]}
+{
+  "result": [
+    {
+      "url": "https://url.kr/5sf6p2",
+      "name": "Sunflower",
+      "exp": "But eating foods full of B vitamins such as tuna, sunflower seeds, and pork can protect them from a steep decline of the memory cells.",
+      "cycle": "5"
+    },
+    {
+      "url": "https://url.kr/zklq7p",
+      "name": "Apple",
+      "exp": "An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek, and European Christian tradition.\n\n Apples grown from seed tend to be very different from those of their parents, and the resultant fruit frequently lacks desired characteristics. Generally, apple cultivars are propagated by clonal grafting onto rootstocks. Apple trees grown without rootstocks tend to be larger and much slower to fruit after planting. Rootstocks are used to control the speed of growth and the size of the resulting tree, allowing for easier harvesting. \n\n (From Wikipedia)",
+      "cycle": "3"
+    },
+    {
+      "url": "https://url.kr/4vlcp8",
+      "name": "Avocado",
+      "exp": "The avocado (Persea americana) is a tree originating in the Americas which is likely native to the highland regions of south-central Mexico to Guatemala.[3][4][5] It is classified as a member of the flowering plant family Lauraceae.[3] The fruit of the plant, also called an avocado (or avocado pear or alligator pear), is botanically a large berry containing a single large seed. \n\n Avocado trees are partially self-pollinating, and are often propagated through grafting to maintain predictable fruit quality and quantity. \n\n (From Wikipedia)",
+      "cycle": "4"
+    },
+    {
+      "url": "https://url.kr/jmw4uq",
+      "name": "Beet",
+      "exp": "The beetroot is the taproot portion of a beet plant, usually known in North America as beets while the vegetable is referred to as beetroot in British English, and also known as the table beet, garden beet, red beet, dinner beet or golden beet.\n\nIt is one of several cultivated varieties of Beta vulgaris grown for their edible taproots and leaves (called beet greens); they have been classified as B. vulgaris subsp. vulgaris Conditiva Group.[2]\n\nOther cultivars of the same species include the sugar beet, the leaf vegetable known as chard or spinach beet, and mangelwurzel, which is a fodder crop. Three subspecies are typically recognized. \n\n (From Wikipedia)",
+      "cycle": "7"
+    },
+    {
+      "url": "https://url.kr/ftu57h",
+      "name": "Bougainvillea",
+      "exp": "Bougainvillea is a genus of thorny ornamental vines, bushes, and trees belonging to the four o' clock family, Nyctaginaceae. It is native to eastern South America, found from Brazil, west to Peru, and south to southern Argentina. Different authors accept from 4 to 18 species in the genus.\n\n The inflorescence consists of large colourful sepal-like bracts which surround three simple waxy flowers, gaining popularity for the plant as an ornamental. \n\n (From Wikipedia)",
+      "cycle": "2"
+    },
+    {
+      "url": "https://url.kr/ehu342",
+      "name": "Corn",
+      "exp": "Maize, also known as corn (North American and Australian English), is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago.\n\n The leafy stalk of the plant produces pollen inflorescences (or \"tassels\") and separate ovuliferous inflorescences called ears that when fertilized yield kernels or seeds, which are fruits. \n\n (From Wikipedia)",
+      "cycle": "9"
+    },
+    {
+      "url": "https://url.kr/duqcgx",
+      "name": "BlueBerry",
+      "exp": "Blueberries are a widely distributed and widespread group of perennial flowering plants with blue or purple berries. \n\n They are classified in the section Cyanococcus within the genus Vaccinium. Vaccinium also includes cranberries, bilberries, huckleberries and Madeira blueberries.\n\n Commercial blueberries—both wild (lowbush) and cultivated (highbush)—are all native to North America. The highbush varieties were introduced into Europe during the 1930s. \n\n (From Wikipedia)",
+      "cycle": "2"
+    },
+    {
+      "url": "https://url.kr/7spifr",
+      "name": "Melon",
+      "exp": "A melon is any of various plants of the family Cucurbitaceae with sweet, edible, and fleshy fruit. \n\n The word \"melon\" can refer to either the plant or specifically to the fruit. Botanically, a melon is a kind of berry, specifically a \"pepo\". The word melon derives from Latin melopepo, which is the latinization of the Greek , meaning \"melon\", itself a compound of μῆλον (mēlon), \"apple, treefruit (of any kind)\" and , amongst others \"a kind of gourd or melon\". \n\n Many different cultivars have been produced, particularly of cantaloupes. \n\n (From Wikipedia)",
+      "cycle": "3"
+    },
+    {
+      "url": "https://url.kr/sqbjdo",
+      "name": "Daisy",
+      "exp": "Bellis perennis is a perennial herbaceous plant growing to 20 centimetres (8 inches) in height. \n\n It has short creeping rhizomes and rosettes of small rounded or spoon-shaped leaves that are from 2 to 5 cm (3⁄4–2 in) long and grow flat to the ground. The species habitually colonises lawns, and is difficult to eradicate by mowing, hence the term 'lawn daisy'. \n\n It blooms from March to September and exhibits the phenomenon of heliotropism, in which the flowers follow the position of the sun in the sky. \n\n (From Wikipedia)",
+      "cycle": "1"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
-    lateinit private var menuSort : MenuItem
+    private lateinit var menuSort : MenuItem
 
     private val tabTitleArray = arrayOf(
         "MY GARDEN",

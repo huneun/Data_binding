@@ -9,8 +9,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.flower.databinding.ActivityItemBinding
-import org.json.JSONArray
-import org.json.JSONObject
+import com.example.flower.util.JsonParser
 
 
 class ItemActivity : AppCompatActivity() {
@@ -26,30 +25,11 @@ class ItemActivity : AppCompatActivity() {
         activityItemBinding.ivShare2.setOnClickListener(clickListener)
 
         //인텐트로 getExtra로 가져올 뷰/ 스크립트 정보를 담은 키
-        val plantKey = intent.getStringExtra("pickup");
-        //json에서 파싱.
-        var itemJSONObject : JSONObject
-        var imageUrl : String = "https://url.kr/clakvg" //defaultUrl
-        var scriptText : String = ""
-        try {
-            val itemStr = assets.open("plants.json").reader().readText();
-            val itemROW = JSONObject(itemStr)
-            val itemResult = itemROW.getString("result")
-            val itemJSONArray = JSONArray(itemResult)
-            for(i: Int in 0 until itemJSONArray.length()){
-                itemJSONObject = itemJSONArray.getJSONObject(i)
-                if(itemJSONObject.getString("name").equals(plantKey)){
-                    imageUrl = itemJSONObject.getString("url")
-                    scriptText = itemJSONObject.getString("exp")
-                    break;
-                }
-            }
-        }catch (e : ClassNotFoundException) {
-            Log.d("test-jennet", "ClassNotFoundException : ${e.exception.message}")
-        }
+        val plantKey = intent.getStringExtra(Constants.KEY_PICK_UP) ?: ""
+        val res = JsonParser.parse(assets.open("plants.json").reader().readText(), plantKey)
             //이미지뷰, 스크립트세팅
-        Glide.with(this).load(imageUrl).into(activityItemBinding.ivItemView)
-        activityItemBinding.tvItemScript.text = scriptText
+        Glide.with(this).load(res.imageUrl).into(activityItemBinding.ivItemView)
+        activityItemBinding.tvItemScript.text = res.scriptText
 
     }
 
