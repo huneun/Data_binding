@@ -61,11 +61,11 @@ class FragmentMyGarden() : Fragment() {
 
             gardenAdapter.setItemClickListener(object: MyGardenAdapter.OnItemClickListener {
                 override fun onClick(v: View, position: Int) {
-                    if(position == 0) {
-                        val nextIntent = Intent(activity, ItemActivity::class.java)
-                        nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
-                        startActivity(nextIntent)
-                    }
+
+                    val nextIntent = Intent(activity, ItemActivity::class.java)
+                    nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
+                    startActivity(nextIntent)
+
                 }
             })
 

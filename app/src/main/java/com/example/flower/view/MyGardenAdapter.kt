@@ -12,6 +12,8 @@ import com.example.flower.model.ViewData
 class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
     RecyclerView.Adapter<MyGardenAdapter.ViewHolder>() {
 
+    private lateinit var itemClickListener : OnItemClickListener
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding = RecyclerviewMainItemBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
 
@@ -50,5 +52,4 @@ class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
         this.itemClickListener = onItemClickListener
     }
 
-    private lateinit var itemClickListener : OnItemClickListener
 }

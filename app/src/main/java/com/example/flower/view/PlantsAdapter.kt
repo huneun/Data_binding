@@ -2,6 +2,7 @@ package com.example.flower.view
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flower.R
@@ -11,12 +12,17 @@ import com.example.flower.model.ViewData
 class PlantsAdapter(private val dataSet: ArrayList<ViewData>) :
     RecyclerView.Adapter<PlantsAdapter.ViewHolder>() {
 
+    private lateinit var itemClickListener : OnItemClickListener
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding = RecyclerviewSecondItemBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        viewHolder.itemView.setOnClickListener{
+            itemClickListener.onClick(it, position)
+        }
         viewHolder.bind(dataSet[position])
     }
 
@@ -32,6 +38,14 @@ class PlantsAdapter(private val dataSet: ArrayList<ViewData>) :
             binding.ivRecyclerview.clipToOutline = true
         }
 
+    }
+
+    interface OnItemClickListener {
+        fun onClick(v: View, position: Int)
+    }
+
+    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
     }
 
 }
