@@ -5,5 +5,7 @@ import android.widget.TextView
 
 data class ViewData(
     val itemImage: Bitmap,
-    val itemText: String
+    val itemName: String,
+    val itemPlanted: String,
+    val itemWatered: String
     )

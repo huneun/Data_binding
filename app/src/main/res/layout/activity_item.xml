@@ -12,12 +12,13 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <TextView
+            android:id="@+id/tv_item_script"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"
             android:gravity="center"
             android:textSize="12dp"
-            android:text="두려움은,\n\n\n\n\n\n\n\n\n단순히 곧 일어날 어떤일에\n대비가 필요하다는 예감이다\n\n\n\n\n\n\n\n마음의 상처를 받았다는 느낌이\n우리에게 주는 의미는\n우리의 기대가 충족되지 못했다는 것이다
+            tools:text="두려움은,\n\n\n\n\n\n\n\n\n단순히 곧 일어날 어떤일에\n대비가 필요하다는 예감이다\n\n\n\n\n\n\n\n마음의 상처를 받았다는 느낌이\n우리에게 주는 의미는\n우리의 기대가 충족되지 못했다는 것이다
             \n\n\n\n\n\n\n\n넘치도록 사랑을 줄 수 있다면\n세상에서 가장 능력있는 사람이 될 수 있다\n\n\n\n\n\n\n\n두려운 방향에 초점을 맞추지 말고,\n가고싶은 방향에 초점을 맞추어라\n\n\n\n\n\n\n\n- 네 안에 잠든 거인을 깨워라\n\n\n\n\n\n\n\n제가 두려운 것은 상대의 전략이 아니라 우리 자신의 실수입니다\n\n\n\n\n\n\n\n페레클레스 명언"/>
     </androidx.core.widget.NestedScrollView>
     <com.google.android.material.appbar.MaterialToolbar
@@ -76,9 +77,11 @@
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
             app:toolbarId="@id/content_bar">
             <ImageView
+                android:id="@+id/iv_item_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/sunflower_a"
+                tools:background="@drawable/sunflower_a"
+                android:scaleType="fitXY"
                 app:layout_collapseMode="parallax"/>
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
@@ -92,16 +95,16 @@
                     android:layout_height="match_parent">
                     <ImageView
                         android:id="@+id/iv_home2"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_margin="5dp"
                         android:src="@drawable/home"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                     <ImageView
                         android:id="@+id/iv_share2"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_margin="5dp"
                         android:src="@drawable/share"
                         app:layout_constraintRight_toRightOf="parent"
