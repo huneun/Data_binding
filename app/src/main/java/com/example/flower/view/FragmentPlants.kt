@@ -20,7 +20,7 @@ import org.json.JSONObject
 
 class FragmentPlants : Fragment() {
 
-    lateinit var plantAdapter : PlantsAdapter
+    lateinit var plantAdapter : HarvestAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentPlantlistBinding.inflate(inflater, container, false)
@@ -40,7 +40,6 @@ class FragmentPlants : Fragment() {
             val jObject = JSONObject(jsonString)
             val jArray = jObject.getJSONArray("result")
 
-
             for(i in 0 until jArray.length()) {
                 val obj = jArray.getJSONObject(i)
                 val url = obj.getString("url")
@@ -53,18 +52,15 @@ class FragmentPlants : Fragment() {
             Log.d("test-jennet", "ArrayData : ${arrayData}")
             binding.rvSecond.layoutManager = GridLayoutManager(context, 2)
 
-            plantAdapter = PlantsAdapter(arrayData, onItemClickListener=
+            plantAdapter = HarvestAdapter(arrayData, onItemClickListener=
             fun(view :View, position : Int) {
                 val nextIntent = Intent(activity, ItemActivity::class.java)
                 nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
                 startActivity(nextIntent)
-            } )
+            }, binding )
             binding.rvSecond.adapter = plantAdapter
 
-
-
         }
-
 
         return binding.root
     }

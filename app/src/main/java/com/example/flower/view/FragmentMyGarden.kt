@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.viewbinding.ViewBinding
 import com.example.flower.ItemActivity
 import com.example.flower.controller.ImageLoader
 import com.example.flower.databinding.FragmentMygardenBinding
+import com.example.flower.databinding.RecyclerviewMainItemBinding
 import com.example.flower.model.ViewData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +22,7 @@ import org.json.JSONObject
 
 class FragmentMyGarden() : Fragment() {
 
-    lateinit var gardenAdapter : MyGardenAdapter
+    lateinit var gardenAdapter : HarvestAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentMygardenBinding.inflate(inflater, container, false)
@@ -56,13 +58,14 @@ class FragmentMyGarden() : Fragment() {
             }
             Log.d("test-jennet", "ArrayData : $arrayData")
             binding.rvMain.layoutManager = GridLayoutManager(context, 2)
-            gardenAdapter = MyGardenAdapter(arrayData, onItemClickListener =
+            gardenAdapter = HarvestAdapter(arrayData, onItemClickListener =
                 fun(view : View, position : Int) {
                     val nextIntent = Intent(activity, ItemActivity::class.java)
                     nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
                     startActivity(nextIntent)
                 }
-            )
+            , binding)
+
             binding.rvMain.adapter = gardenAdapter
 
         }
