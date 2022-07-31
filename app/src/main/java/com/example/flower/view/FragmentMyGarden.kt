@@ -8,67 +8,40 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.viewbinding.ViewBinding
 import com.example.flower.ItemActivity
 import com.example.flower.controller.ImageLoader
 import com.example.flower.databinding.FragmentMygardenBinding
-import com.example.flower.databinding.RecyclerviewMainItemBinding
+import com.example.flower.model.MyGardenItemTask
 import com.example.flower.model.ViewData
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import org.json.JSONObject
 
-class FragmentMyGarden() : Fragment() {
+class FragmentMyGarden : BaseFragment("garden.json") {
 
     lateinit var gardenAdapter : HarvestAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentMygardenBinding.inflate(inflater, container, false)
 
-        var arrayData = ArrayList<ViewData>()
-        var jsonString : String? = null
+        val task = MyGardenItemTask(jsonString)
+        task.execute.invokeOnCompletion {
+            when(it){
+                is CancellationException -> Log.d("test-jennet", "MyGardenItemTask Thread Cancelled!!")
+                else -> {
+                    binding.rvMain.layoutManager = GridLayoutManager(context, 2)
+                    gardenAdapter = HarvestAdapter(task.arrayData, onItemClickListener =
+                    fun(view : View, position : Int) {
+                        val nextIntent = Intent(activity, ItemActivity::class.java)
+                        nextIntent.putExtra("pickup", task.jArray.getJSONObject(position).getString("name"))
+                        startActivity(nextIntent)
+                    } , binding)
 
-        try {
-            val assetManager = resources.assets
-            val inputStream = assetManager.open("garden.json")
-            jsonString = inputStream.bufferedReader().use { it.readText() }
-        }catch (e : ClassNotFoundException) {
-            Log.e("test-jennet", "Exception to searching file in assets folder")
-        }
-
-        CoroutineScope(Dispatchers.Main).launch {
-            val jObject = JSONObject(jsonString)
-            val jArray = jObject.getJSONArray("result")
-
-            for(i in 0 until jArray.length()) {
-                jArray.getJSONObject(i).let{
-                    val url = it.getString("url")
-                    val title = it.getString("name")
-                    val planted = it.getString("planted")
-                    val watered = it.getString("watered")
-                    val bitmapImage = withContext(Dispatchers.IO) { ImageLoader.loadImage(url) }
-                    Log.d("test-jennet", "bitmap Image : $bitmapImage")
-                    var viewData = bitmapImage?.let { ViewData(it, title, planted, watered) }
-                    viewData?.let { it -> arrayData.add(it) }
-
+                    binding.rvMain.adapter = gardenAdapter
                 }
-
             }
-            Log.d("test-jennet", "ArrayData : $arrayData")
-            binding.rvMain.layoutManager = GridLayoutManager(context, 2)
-            gardenAdapter = HarvestAdapter(arrayData, onItemClickListener =
-                fun(view : View, position : Int) {
-                    val nextIntent = Intent(activity, ItemActivity::class.java)
-                    nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
-                    startActivity(nextIntent)
-                }
-            , binding)
-
-            binding.rvMain.adapter = gardenAdapter
-
         }
+
         return binding.root
     }
 }
