@@ -9,10 +9,10 @@ import com.example.flower.R
 import com.example.flower.databinding.RecyclerviewMainItemBinding
 import com.example.flower.model.ViewData
 
-class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
-    RecyclerView.Adapter<MyGardenAdapter.ViewHolder>() {
-
-    private lateinit var itemClickListener : OnItemClickListener
+class MyGardenAdapter(
+    private val dataSet: ArrayList<ViewData>,
+    private val onItemClickListener: (View, Int) -> Unit
+    ) : RecyclerView.Adapter<MyGardenAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding = RecyclerviewMainItemBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
@@ -22,7 +22,7 @@ class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.setOnClickListener {
-            itemClickListener.onClick(it, position)
+            onItemClickListener(it, position)
         }
         viewHolder.bind(dataSet[position])
     }
@@ -42,14 +42,6 @@ class MyGardenAdapter(private val dataSet: ArrayList<ViewData>) :
 
         }
 
-    }
-
-    interface OnItemClickListener {
-        fun onClick(v: View, position: Int)
-    }
-
-    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
-        this.itemClickListener = onItemClickListener
     }
 
 }

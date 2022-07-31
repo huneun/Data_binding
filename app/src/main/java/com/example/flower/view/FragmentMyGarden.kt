@@ -56,18 +56,14 @@ class FragmentMyGarden() : Fragment() {
             }
             Log.d("test-jennet", "ArrayData : $arrayData")
             binding.rvMain.layoutManager = GridLayoutManager(context, 2)
-            gardenAdapter = MyGardenAdapter(arrayData)
-            binding.rvMain.adapter = gardenAdapter
-
-            gardenAdapter.setItemClickListener(object: MyGardenAdapter.OnItemClickListener {
-                override fun onClick(v: View, position: Int) {
-
+            gardenAdapter = MyGardenAdapter(arrayData, onItemClickListener =
+                fun(view : View, position : Int) {
                     val nextIntent = Intent(activity, ItemActivity::class.java)
                     nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
                     startActivity(nextIntent)
-
                 }
-            })
+            )
+            binding.rvMain.adapter = gardenAdapter
 
         }
         return binding.root

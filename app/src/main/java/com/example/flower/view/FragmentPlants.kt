@@ -12,14 +12,13 @@ import com.example.flower.ItemActivity
 import com.example.flower.controller.ImageLoader
 import com.example.flower.databinding.FragmentPlantlistBinding
 import com.example.flower.model.ViewData
-import com.example.flower.view.MyGardenAdapter.OnItemClickListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 
-class FragmentPlants() : Fragment() {
+class FragmentPlants : Fragment() {
 
     lateinit var plantAdapter : PlantsAdapter
 
@@ -41,6 +40,7 @@ class FragmentPlants() : Fragment() {
             val jObject = JSONObject(jsonString)
             val jArray = jObject.getJSONArray("result")
 
+
             for(i in 0 until jArray.length()) {
                 val obj = jArray.getJSONObject(i)
                 val url = obj.getString("url")
@@ -52,18 +52,22 @@ class FragmentPlants() : Fragment() {
             }
             Log.d("test-jennet", "ArrayData : ${arrayData}")
             binding.rvSecond.layoutManager = GridLayoutManager(context, 2)
-            plantAdapter = PlantsAdapter(arrayData)
+
+            plantAdapter = PlantsAdapter(arrayData, onItemClickListener=
+            fun(view :View, position : Int) {
+                val nextIntent = Intent(activity, ItemActivity::class.java)
+                nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
+                startActivity(nextIntent)
+            } )
             binding.rvSecond.adapter = plantAdapter
 
-            plantAdapter.setItemClickListener(object: PlantsAdapter.OnItemClickListener {
-                override fun onClick(v: View, position: Int) {
-                    val nextIntent = Intent(activity, ItemActivity::class.java)
-                    nextIntent.putExtra("pickup", jArray.getJSONObject(position).getString("name"))
-                    startActivity(nextIntent)
-                }
-            })
+
 
         }
+
+
         return binding.root
     }
+
+
 }
