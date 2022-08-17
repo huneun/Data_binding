@@ -1,12 +1,7 @@
-package com.example.flower.model
+package com.example.flower.controller
 
-import android.content.Intent
 import android.util.Log
-import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
-import com.example.flower.ItemActivity
-import com.example.flower.controller.ImageLoader
-import com.example.flower.view.HarvestAdapter
+import com.example.flower.model.ViewData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +13,7 @@ class PlantsTask(private val jsonString : String) {
     private val jObject = JSONObject(jsonString)
     internal val jArray = jObject.getJSONArray("result")
 
-    val execute = CoroutineScope(Dispatchers.Main).launch {
+    val displayExecute = CoroutineScope(Dispatchers.Main).launch {
         val jObject = JSONObject(jsonString)
         val jArray = jObject.getJSONArray("result")
 
@@ -34,5 +29,12 @@ class PlantsTask(private val jsonString : String) {
         Log.d("test-jennet", "ArrayData : ${arrayData}")
 
     }
+
+//    val addItemExecute = CoroutineScope(Dispatchers.Main).launch {
+//        val jsonAddMyGarden = JSONObject()
+//        jObject.put("","")
+//    }
+
+
 
 }

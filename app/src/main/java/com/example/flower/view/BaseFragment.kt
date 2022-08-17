@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewbinding.ViewBinding
-import com.example.flower.model.ViewData
+import com.example.flower.model.JsonManager
 
 abstract class BaseFragment(private val jsonFileName : String) : Fragment() {
 
@@ -16,9 +15,8 @@ abstract class BaseFragment(private val jsonFileName : String) : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         try {
-            val assetManager = resources.assets
-            val inputStream = assetManager.open(jsonFileName)
-            jsonString = inputStream.bufferedReader().use { it.readText() }
+            jsonString = JsonManager().inputStream(context, jsonFileName)
+            Log.d("test-jennet", "BaseFragment jsonString : ${jsonString}")
         }catch (e : ClassNotFoundException) {
             Log.e("test-jennet", "Exception to searching file in assets folder")
         }

@@ -6,15 +6,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.flower.ItemActivity
-import com.example.flower.controller.ImageLoader
 import com.example.flower.databinding.FragmentMygardenBinding
-import com.example.flower.model.MyGardenItemTask
-import com.example.flower.model.ViewData
+import com.example.flower.controller.MyGardenItemTask
 import kotlinx.coroutines.*
-import org.json.JSONObject
 
 class FragmentMyGarden : BaseFragment("garden.json") {
 
