@@ -14,7 +14,7 @@ import com.example.flower.databinding.RecyclerviewSecondItemBinding
 import com.example.flower.model.ViewData
 
 class HarvestAdapter(
-    private val dataSet: ArrayList<ViewData>,
+    private val dataSet: List<ViewData>,
     private val onItemClickListener: (View, Int) -> Unit,
     private val viewBinding : ViewBinding
     ) : RecyclerView.Adapter<HarvestViewHolder>() {

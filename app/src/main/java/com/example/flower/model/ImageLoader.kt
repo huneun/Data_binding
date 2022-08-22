@@ -1,4 +1,4 @@
-package com.example.flower.controller
+package com.example.flower.model
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

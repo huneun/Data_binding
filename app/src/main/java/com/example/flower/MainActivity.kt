@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private val tabTitleArray = arrayOf(
         "MY GARDEN",
-        "PALNT LIST"
+        "PLANT LIST"
     )
 
     private val tabIconNonClickArray = arrayOf(
@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity() {
                         else -> menuSort.setVisible(false)
                     }
                 }
-
 
             }
 

@@ -1,4 +1,4 @@
-package com.example.flower.controller
+package com.example.flower.model
 
 import android.util.Log
 import com.example.flower.model.ViewData
@@ -10,8 +10,6 @@ import org.json.JSONObject
 
 class PlantsTask(private val jsonString : String) {
      var arrayData = ArrayList<ViewData>()
-    private val jObject = JSONObject(jsonString)
-    internal val jArray = jObject.getJSONArray("result")
 
     val displayExecute = CoroutineScope(Dispatchers.Main).launch {
         val jObject = JSONObject(jsonString)
