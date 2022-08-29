@@ -1,18 +1,26 @@
 package com.example.flower
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flower.databinding.ActivityMainBinding
+import com.example.flower.model.HarvestDatabase
+import com.example.flower.model.HarvestEntity
+import com.example.flower.model.HarvestEntryTask
+import com.example.flower.model.NetworkManager
 import com.example.flower.view.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.Job
+import java.util.concurrent.CancellationException
 
 class MainActivity : AppCompatActivity() {
     lateinit var activityMainBinding: ActivityMainBinding
     lateinit private var menuSort : MenuItem
+    lateinit var db : HarvestDatabase
 
     private val tabTitleArray = arrayOf(
         "MY GARDEN",
@@ -78,6 +86,23 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+
+        db = HarvestDatabase.getInstance(this)!!
+        val apiConnect = NetworkManager()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            val jsonString = apiConnect.sendGet(NetworkManager.PHOTOS)
+            HarvestEntryTask(jsonString).let { task ->
+                task.execute.invokeOnCompletion {
+                    when(it) {
+                        is CancellationException -> Log.d("test-jennet","MyGardenTask Thread Cancelled")
+                        else -> task.entityList
+
+                    }
+                }
+
+            }
+        }
 
 
     }

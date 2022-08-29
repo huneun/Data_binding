@@ -24,7 +24,7 @@ class PlantsTask(private val jsonString : String) {
             var viewData = bitmapImage?.let { ViewData(it, title,"","") }!!
             viewData?.let { arrayData.add(it) }
         }
-        Log.d("test-jennet", "ArrayData : ${arrayData}")
+        Log.d("test-jennet", "ArrayData : $arrayData")
 
     }
 
