@@ -20,4 +20,8 @@ class MyGardenManager {
         val jsonString = JsonManager().inputStream(context, jsonFileName)
         return MyGardenItemTask(jsonString).run().blockingSingle()
     }
+    fun getMyGardenList2(context: Context): List<ViewData> {
+        val jsonString = JsonManager().inputStream(context, jsonFileName)
+        return MyGardenItemTask(jsonString).run2().blockingGet()
+    }
 }

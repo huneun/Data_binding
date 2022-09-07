@@ -22,7 +22,8 @@ class FragmentMyGarden : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentMygardenBinding.inflate(inflater, container, false)
-        val arrayData = gardenManager.getMyGardenList(requireContext())
+//        val arrayData = gardenManager.getMyGardenList(requireContext())
+        val arrayData = gardenManager.getMyGardenList2(requireContext())
 
         binding.rvMain.layoutManager = GridLayoutManager(context, 2)
         gardenAdapter = HarvestAdapter(arrayData, onItemClickListener =
