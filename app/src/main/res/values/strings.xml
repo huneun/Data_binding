@@ -91,4 +91,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="api_key">7c7478aa5a374563a3a781524da19313</string>
 </resources>

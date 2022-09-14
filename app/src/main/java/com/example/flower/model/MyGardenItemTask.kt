@@ -13,6 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
+import java.net.HttpURLConnection
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -20,6 +21,13 @@ class MyGardenItemTask(private val jsonString : String) {
     internal var arrayData = ArrayList<ViewData>()
     private val jObject = JSONObject(jsonString)
     internal val jArray = jObject.getJSONArray("result")
+
+    fun connectNetwork(){
+
+
+        // Retrofit 필수
+    }
+
     fun run() : Observable<List<ViewData>> {
         return Observable.create<List<ViewData>> {
             Log.d("test-jennet", "MyGardenItemTask")
@@ -43,6 +51,7 @@ class MyGardenItemTask(private val jsonString : String) {
     }
 
     fun run2() : Single<List<ViewData>> {
+
         return Single.create<List<ViewData>>{
             for(i in 0 until jArray.length()) {
                 jArray.getJSONObject(i).let{
@@ -55,13 +64,14 @@ class MyGardenItemTask(private val jsonString : String) {
                     bitmapImage?.let { img ->
                         arrayData.add(ViewData(img ,title, planted,watered))
                     }
-
                 }
 
             }
             Log.d("test-jennet", "ArrayData : $arrayData")
         }.subscribeOn(Schedulers.single()).observeOn(Schedulers.io())
     }
+
+
 
 //     val execute = CoroutineScope(Dispatchers.Main).launch {
 //         Log.d("test-jennet", "MyGardenItemTask")

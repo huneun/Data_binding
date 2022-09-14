@@ -22,18 +22,19 @@ class FragmentMyGarden : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentMygardenBinding.inflate(inflater, container, false)
-//        val arrayData = gardenManager.getMyGardenList(requireContext())
         val arrayData = gardenManager.getMyGardenList2(requireContext())
+         arrayData.subscribe{ result ->
+             binding.rvMain.layoutManager = GridLayoutManager(context, 2)
+             gardenAdapter = HarvestAdapter(result, onItemClickListener =
+              { _, position ->
+                 val nextIntent = Intent(activity, ItemActivity::class.java)
+                 nextIntent.putExtra("pickup", result[position].itemName)
+                 startActivity(nextIntent)
+              } , binding) //클릭리스너 람다표현 best
 
-        binding.rvMain.layoutManager = GridLayoutManager(context, 2)
-        gardenAdapter = HarvestAdapter(arrayData, onItemClickListener =
-        fun(view : View, position : Int) {
-            val nextIntent = Intent(activity, ItemActivity::class.java)
-            nextIntent.putExtra("pickup", arrayData[position].itemName)
-            startActivity(nextIntent)
-        } , binding)
-
-        binding.rvMain.adapter = gardenAdapter
+             binding.rvMain.adapter = gardenAdapter
+             Log.d("test-jennet", "adapter : "+gardenAdapter);
+         }
 
         return binding.root
     }
