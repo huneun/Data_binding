@@ -23,7 +23,7 @@ class FragmentMyGarden : BaseFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentMygardenBinding.inflate(inflater, container, false)
         val arrayData = gardenManager.getMyGardenList2(requireContext())
-         arrayData.subscribe{ result ->
+         arrayData.subscribe { result ->
              binding.rvMain.layoutManager = GridLayoutManager(context, 2)
              gardenAdapter = HarvestAdapter(result, onItemClickListener =
               { _, position ->

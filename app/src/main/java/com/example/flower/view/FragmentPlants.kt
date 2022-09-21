@@ -20,15 +20,16 @@ class FragmentPlants : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentPlantlistBinding.inflate(inflater, container, false)
-        val arrayData = plantManager.getPlantsList(requireContext())
-        binding.rvSecond.layoutManager = GridLayoutManager(context, 2)
-        plantAdapter = HarvestAdapter(arrayData, onItemClickListener=
+        plantManager.getPlantsList(requireContext()).subscribe { arrayData ->
+            binding.rvSecond.layoutManager = GridLayoutManager(context, 2)
+            plantAdapter = HarvestAdapter(arrayData, onItemClickListener=
             fun(view : View, position : Int) {
                 val nextIntent = Intent(activity, ItemActivity::class.java)
                 nextIntent.putExtra("pickup", arrayData[position].itemName)
                 startActivity(nextIntent)
             }, binding )
-        binding.rvSecond.adapter = plantAdapter
+            binding.rvSecond.adapter = plantAdapter
+        }
 
 //        val writeJson = JSONObject()
 //        writeJson.put("test","write")

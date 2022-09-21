@@ -1,4 +1,4 @@
-package com.example.retrofitconnection.gson
+package com.example.flower.model
 
 import android.util.Log
 import com.example.retrofitconnection.utils.API
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
 
-    fun getClient(baseUrl: String): Retrofit? {
+    fun getClient(baseUrl: String): Retrofit {
         Log.d(TAG, "RetrofitClient getClient() called")
 
         //로깅 인터셉터 추가

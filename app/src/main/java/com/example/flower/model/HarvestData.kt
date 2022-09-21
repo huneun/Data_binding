@@ -1,7 +1,6 @@
 package com.example.flower.model
 
 import android.graphics.Bitmap
-import java.lang.Exception
 
 data class HarvestData(
     val itemImage: Bitmap,
@@ -9,4 +8,9 @@ data class HarvestData(
     val itemLikes: Int,
     val itemDescription: String,
     val itemPlanted: String,
-    val itemWatered: String)
+    val itemWatered: String
+) {
+    fun toViewData(): ViewData {
+        return ViewData(itemImage, itemName, itemPlanted, itemWatered)
+    }
+}
