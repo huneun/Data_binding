@@ -9,4 +9,8 @@ data class HarvestData(
     val itemLikes: Int,
     val itemDescription: String,
     val itemPlanted: String,
-    val itemWatered: String)
+    val itemWatered: String){
+    fun toViewData(): ViewData {
+        return ViewData(itemImage, itemName, itemPlanted, itemWatered)
+    }
+}

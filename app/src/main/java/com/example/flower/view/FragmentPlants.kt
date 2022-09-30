@@ -17,15 +17,25 @@ class FragmentPlants : BaseFragment() {
     var plantManager : PlantManager = PlantManager()
     lateinit var plantAdapter : HarvestAdapter
 
+    val searchList = arrayOf("apple", "sunflower", "grape")
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentPlantlistBinding.inflate(inflater, container, false)
-        val arrayData = plantManager.getPlantsList(requireContext())
+        val viewData = ArrayList<ViewData>();
+        for(i in 0 until searchList.size-1) {
+            val arrayData = plantManager.getPlantsList(searchList.get(i)).subscribe{ result ->
+                viewData.add(result)
+            }
+
+        }
+
+
         binding.rvSecond.layoutManager = GridLayoutManager(context, 2)
-        plantAdapter = HarvestAdapter(arrayData, onItemClickListener=
+        plantAdapter = HarvestAdapter(viewData, onItemClickListener=
             fun(view : View, position : Int) {
                 val nextIntent = Intent(activity, ItemActivity::class.java)
-                nextIntent.putExtra("pickup", arrayData[position].itemName)
+                nextIntent.putExtra("pickup", viewData[position].itemName)
                 startActivity(nextIntent)
             }, binding )
         binding.rvSecond.adapter = plantAdapter

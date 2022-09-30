@@ -1,16 +1,7 @@
 package com.example.flower.model
 
 import android.content.Context
-import android.os.Build
-import android.util.Log
-import android.view.View
-import androidx.annotation.RequiresApi
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.core.Scheduler
-import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.schedulers.Schedulers
-import java.util.concurrent.CancellationException
+import io.reactivex.Single
 
 class MyGardenManager {
 

@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flower.databinding.ActivityMainBinding
-import com.example.flower.model.HarvestEntryTask
 import com.example.flower.model.NetworkManager
 import com.example.flower.view.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
